@@ -10,10 +10,10 @@
                 <table align="center">
                     <tr>
                         <td>
-                            <form:label path="lastname">LastName</form:label>
+                            <form:label path="name">Name</form:label>
                         </td>
                         <td>
-                            <form:input path="lastname" name="lastname" id="lastname" />
+                            <form:input path="name" name="name" id="name" />
                         </td>
                     </tr>
                     <tr>
@@ -39,15 +39,7 @@
                             <form:password path="password" name="password" id="password" />
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <form:label path="firstname">FirstName</form:label>
-                        </td>
-                        <td>
-                            <form:input path="firstname" name="firstname" id="firstname" />
-                        </td>
-                    </tr>
-                    
+                                
                     <tr>
                         <td></td>
                         <td>

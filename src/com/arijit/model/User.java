@@ -3,11 +3,9 @@ package com.arijit.model;
 public class User {
 	  private String username;
 	  private String password;
-	  private String firstname;
-	  private String lastname;
+	  private String name;
 	  private String email;
-	  private String address;
-	  private int phone;
+
 	/**
 	 * @return the username
 	 */
@@ -33,28 +31,16 @@ public class User {
 		this.password = password;
 	}
 	/**
-	 * @return the firstname
+	 * @return the name
 	 */
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
 	/**
-	 * @param firstname the firstname to set
+	 * @param firstname the name to set
 	 */
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	/**
-	 * @return the lastname
-	 */
-	public String getLastname() {
-		return lastname;
-	}
-	/**
-	 * @param lastname the lastname to set
-	 */
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setName(String name) {
+		this.name = name;
 	}
 	/**
 	 * @return the email
@@ -67,30 +53,6 @@ public class User {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	/**
-	 * @return the address
-	 */
-	public String getAddress() {
-		return address;
-	}
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	/**
-	 * @return the phone
-	 */
-	public int getPhone() {
-		return phone;
-	}
-	/**
-	 * @param phone the phone to set
-	 */
-	public void setPhone(int phone) {
-		this.phone = phone;
 	}
 	  
 	  
