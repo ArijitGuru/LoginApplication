@@ -20,6 +20,14 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView showHome(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView("home");
+		mav.addObject("home", new Login());
+		return mav;
+
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("login");
@@ -36,7 +44,7 @@ public class LoginController {
 		User user = userService.validateUser(login);
 		if (null != user) {
 			mav = new ModelAndView("welcome");
-			mav.addObject("firstname", user.getName());
+			mav.addObject("user", user);
 		} else {
 			mav = new ModelAndView("login");
 			mav.addObject("message", "Username or Password is wrong!!");
