@@ -18,7 +18,7 @@
 
             <tr>
 
-                <td>Welcome ${Name}</td>
+                <td>Welcome ${user.name} ${user.email}</td>
 
             </tr>
 
