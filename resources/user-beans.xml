@@ -33,7 +33,7 @@
 	<jdbc:embedded-database id="dataSrc"
 		type="H2">
 		<jdbc:script location="classpath:sql/create-table.sql" />
-		<jdbc:script location="classpath:sql/insert-data.sql" />
+		<!-- <jdbc:script location="classpath:sql/insert-data.sql" /> -->
 	</jdbc:embedded-database>
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

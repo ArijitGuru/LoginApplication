@@ -46,7 +46,7 @@
                             <form:button id="register" name="register">Register</form:button>
                         </td>
                         <td>
-                            <form:button id="reset" name="reset">Reset</form:button>
+                            <form:button id="reset" name="reset" style="align: left">Reset</form:button>
                         </td>
                     </tr>
                     <tr></tr>
