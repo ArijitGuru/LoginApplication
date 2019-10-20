@@ -36,7 +36,7 @@ public class RegistrationController {
 			@ModelAttribute("user") User user) {
 		userService.register(user);
 		logger.debug("addUser() is executed!");
-		return new ModelAndView("welcome", " Name ", user.getName());
+		return new ModelAndView("welcome", "Name", user.getName());
 
 	}
 }

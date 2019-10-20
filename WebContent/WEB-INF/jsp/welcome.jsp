@@ -18,7 +18,7 @@
 
             <tr>
 
-                <td>Welcome ${firstname}</td>
+                <td>Welcome ${Name}</td>
 
             </tr>
 
