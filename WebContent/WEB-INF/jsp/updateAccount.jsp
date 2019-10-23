@@ -44,6 +44,11 @@
 				<td style="font-style: italic; color: red;">${message}</td>
 
 			</tr>
+			<tr>
+
+			<td><a href="home">Home</a>
+
+		</tr>
 
 		</table>
 	</form:form>
