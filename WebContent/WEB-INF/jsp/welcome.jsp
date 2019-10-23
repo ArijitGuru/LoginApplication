@@ -1,45 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-    <html>
+<html>
 
-    <head>
+<head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-        <title>Welcome</title>
+<title>Welcome</title>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <table>
+	<table>
 
-            <tr>
+		<tr>
 
-                <td>Welcome ${user.name} ${user.email}</td>
+			<td>Welcome ${user.name} ${user.email}</td>
 
-            </tr>
+		</tr>
 
-            <tr>
+		<tr>
 
-            </tr>
+		</tr>
 
-            <tr>
+		<tr>
 
-            </tr>
+		</tr>
 
-            <tr>
+		<tr>
 
-                <td><a href="home">Home</a>
+			<td><a href="home">Home</a>
+			<td><a href="updateAccount">Update Account</a></td>
 
-                </td>
+		</tr>
 
-            </tr>
+	</table>
 
-        </table>
+</body>
 
-    </body>
-
-    </html>
+</html>

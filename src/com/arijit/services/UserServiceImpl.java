@@ -19,4 +19,10 @@ public class UserServiceImpl implements UserService {
 	public User validateUser(Login login) {
 		return userDao.validateUser(login);
 	}
+
+	@Override
+	public boolean updateAccountDetails(User user) {
+		
+		return  userDao.updateUser(user);
+	}
 }

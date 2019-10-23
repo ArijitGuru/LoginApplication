@@ -38,6 +38,15 @@ public class UserDaoImpl implements UserDao {
 		logger.debug("UserDaoImpl.validateUser() is executed..");
 		return users.size() > 0 ? users.get(0) : null;
 	}
+
+	@Override
+	public boolean updateUser(User user) {
+		String sql = "update user_detail set name = ?, user_name = ?, email = ?, password = ? where user_name = ?";
+		logger.debug("UserDaoImpl.register() is being executed..");
+		int recordCount = jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword(), user.getUsername());
+		logger.debug("Number of records updated..: "+recordCount);
+		return (recordCount == 1 ? true : false);
+	}
 }
 
 class UserMapper implements RowMapper<User> {
