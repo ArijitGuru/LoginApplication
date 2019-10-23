@@ -34,7 +34,8 @@
 		<tr>
 
 			<td><a href="home">Home</a>
-			<td><a href="updateAccount">Update Account</a></td>
+			<td><a href="updateAccount">Account Update</a></td>
+			<td><a href="tutorials">Tutorials</a></td>
 
 		</tr>
 
