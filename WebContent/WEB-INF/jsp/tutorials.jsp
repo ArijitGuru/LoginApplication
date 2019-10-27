@@ -34,7 +34,6 @@
 		<tr>
 
 			<td><a href="home">Home</a>
-
 		</tr>
 
 	</table>
