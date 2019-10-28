@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.arijit.model.Login;
@@ -29,9 +30,13 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "logout",	required = false) String logout) {
 		ModelAndView mav = new ModelAndView("login");
 		mav.addObject("login", new Login());
+		if (logout != null) {
+			mav.addObject("message", "Logged out from application successfully.");
+			request.getSession().invalidate();
+		}
 		return mav;
 
 	}
@@ -50,6 +55,15 @@ public class LoginController {
 			mav.addObject("message", "Username or Password is wrong!!");
 		}
 
+		return mav;
+
+	}
+	
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public ModelAndView showWelcome(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "logout",	required = false) String logout) {
+		ModelAndView mav = new ModelAndView("welcome");
+		mav.addObject("welcome");
+		
 		return mav;
 
 	}
