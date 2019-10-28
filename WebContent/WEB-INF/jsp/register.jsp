@@ -52,7 +52,7 @@
                     <tr></tr>
                     <tr>
                         <td></td>
-                        <td><a href="home">Home</a>
+                        <td><a href="welcome">Home</a>
                         </td>
                     </tr>
                 </table>

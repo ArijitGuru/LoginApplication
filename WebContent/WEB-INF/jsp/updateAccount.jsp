@@ -13,6 +13,24 @@
 
 		<table align="center">
 			<tr>
+
+				<td><a href="welcome">Home</a>
+				<td><a href="updateAccount">Account Update</a></td>
+				<td><a href="tutorials">Tutorials</a></td>
+				<td><a href="admin">Admin</a></td>
+				<td><a href="login?logout">Logout</a></td>
+
+			</tr>
+			<tr>
+				<td> <br/> </td>
+			</tr>
+			<tr>
+				<td> <br/> </td>
+			</tr>
+			<tr>
+				<td> <br/> </td>
+			</tr>
+			<tr>
 				<td><form:label path="name">Name</form:label></td>
 				<td><form:input path="name" name="name" id="name" /></td>
 			</tr>
@@ -44,10 +62,7 @@
 				<td style="font-style: italic; color: red;">${message}</td>
 
 			</tr>
-			<tr>
-
-				<td><a href="home">Home</a>
-			</tr>
+			
 
 		</table>
 	</form:form>

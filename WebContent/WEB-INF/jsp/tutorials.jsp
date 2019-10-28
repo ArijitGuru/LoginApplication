@@ -19,7 +19,16 @@
 
 		<tr>
 
-			<td>Welcome ${message}</td>
+			<td><a href="welcome">Home</a>
+			<td><a href="updateAccount">Account Update</a></td>
+			<td><a href="tutorials">Tutorials</a></td>
+			<td><a href="admin">Admin</a></td>
+			<td><a href="login?logout">Logout</a></td>
+
+		</tr>
+		<tr>
+
+			<td> <h2>${message} </h2></td>
 
 		</tr>
 
@@ -29,11 +38,6 @@
 
 		<tr>
 
-		</tr>
-
-		<tr>
-
-			<td><a href="home">Home</a>
 		</tr>
 
 	</table>

@@ -9,27 +9,13 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Welcome</title>
+<title>Welcome Admin</title>
 
 </head>
 
 <body>
 
 	<table>
-
-		<tr>
-
-			<td>Welcome ${user.name} ${user.email}</td>
-
-		</tr>
-
-		<tr>
-
-		</tr>
-
-		<tr>
-
-		</tr>
 
 		<tr>
 
@@ -41,11 +27,25 @@
 
 		</tr>
 		<tr>
-			<td>
-				<h2>This is home page</h2>
-			</td>
+			<td><br /></td>
+		</tr>
+		<tr>
+			<td><br /></td>
 		</tr>
 
+		<tr>
+
+			<td><h2>${message}</h2></td>
+
+		</tr>
+
+		<tr>
+
+		</tr>
+
+		<tr>
+
+		</tr>
 
 	</table>
 
