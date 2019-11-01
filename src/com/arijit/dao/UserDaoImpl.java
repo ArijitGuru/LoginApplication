@@ -25,13 +25,13 @@ public class UserDaoImpl implements UserDao {
 	JdbcTemplate jdbcTemplate;
 
 	public void register(User user) {
-		String sql = "insert into user_detail (name, user_name, email, password) values(?, ?, ?, ?)";
+		String sql = "insert into user_detail (name, username, email, password) values(?, ?, ?, ?)";
 		logger.debug("UserDaoImpl.register() is being executed..");
 		jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword());
 	}
 
 	public User validateUser(Login login) {
-		String sql = "select * from user_detail where user_name='" + login.getUsername() + "' and password='"
+		String sql = "select * from user_detail where username='" + login.getUsername() + "' and password='"
 				+ login.getPassword() + "'";
 		logger.debug("UserDaoImpl.validateUser() is being executed..");
 		List<User> users = jdbcTemplate.query(sql, new UserMapper());
@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public boolean updateUser(User user) {
-		String sql = "update user_detail set name = ?, user_name = ?, email = ?, password = ? where user_name = ?";
+		String sql = "update user_detail set name = ?, username = ?, email = ?, password = ? where user_name = ?";
 		logger.debug("UserDaoImpl.register() is being executed..");
 		int recordCount = jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword(), user.getUsername());
 		logger.debug("Number of records updated..: "+recordCount);
@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
 class UserMapper implements RowMapper<User> {
 	public User mapRow(ResultSet rs, int arg1) throws SQLException {
 		User user = new User();
-		user.setUsername(rs.getString("user_name"));
+		user.setUsername(rs.getString("username"));
 		user.setPassword(rs.getString("password"));
 		user.setName(rs.getString("name"));
 		user.setEmail(rs.getString("email"));

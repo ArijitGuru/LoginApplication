@@ -2,6 +2,7 @@ package com.arijit.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,9 +30,12 @@ public class LoginController {
 
 	}
 	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "logout",	required = false) String logout) {
+	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "logout", required = false) String logout) {
 		ModelAndView mav = new ModelAndView("login");
+		System.out.println(request.getParameter("username"));
+		System.out.println(request.getParameter("password"));
 		mav.addObject("login", new Login());
 		if (logout != null) {
 			mav.addObject("message", "Logged out from application successfully.");
@@ -40,12 +44,16 @@ public class LoginController {
 		return mav;
 
 	}
+	 
+	 
 
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("login") Login login) {
+			@ModelAttribute("login") Login login, HttpSession session) {
 
 		ModelAndView mav = null;
+		System.out.println(request.getParameter("username"));
+		System.out.println(request.getParameter("password"));
 		User user = userService.validateUser(login);
 		if (null != user) {
 			mav = new ModelAndView("welcome");

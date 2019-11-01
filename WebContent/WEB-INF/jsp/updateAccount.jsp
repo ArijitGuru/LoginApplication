@@ -15,7 +15,6 @@
 			<tr>
 
 				<td><a href="welcome">Home</a>
-				<td><a href="updateAccount">Account Update</a></td>
 				<td><a href="tutorials">Tutorials</a></td>
 				<td><a href="admin">Admin</a></td>
 				<td><a href="login?logout">Logout</a></td>
