@@ -4,7 +4,7 @@ insert  into `user_detail`(`name`,`username`,`email`,`password`,`enabled`) value
 insert  into `user_detail`(`name`,`username`,`email`,`password`,`enabled`) values ('User4','username4','user4@gmail.com', '123456', true);
 
 
-INSERT INTO user_roles (username, role) VALUES ('username1', 'ROLE_USER');
-INSERT INTO user_roles (username, role) VALUES ('username1', 'ROLE_ADMIN');
-INSERT INTO user_roles (username, role) VALUES ('username2', 'ROLE_USER');
+
+INSERT INTO `authorities` (`username`, `role`) VALUES ('username1', 'ROLE_ADMIN');
+INSERT INTO `authorities` (`username`, `role`) VALUES ('username2', 'ROLE_USER');
 

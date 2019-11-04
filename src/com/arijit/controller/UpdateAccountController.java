@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.arijit.model.User;
+import com.arijit.model.UserInfo;
 import com.arijit.services.UserService;
 
 @Controller
@@ -25,7 +25,7 @@ public class UpdateAccountController {
 	@RequestMapping(value = "/updateAccount", method = RequestMethod.GET)
 	public ModelAndView showUpdateAccount(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("updateAccount");
-		mav.addObject("user", new User());
+		mav.addObject("user", new UserInfo());
 		logger.debug("showUpdateAccount() is executed!");
 		return mav;
 
@@ -33,7 +33,7 @@ public class UpdateAccountController {
 
 	@RequestMapping(value = "/updateAccountProcess", method = RequestMethod.POST)
 	public ModelAndView updateUserAccount(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("user") User user) {
+			@ModelAttribute("user") UserInfo user) {
 		userService.updateAccountDetails(user);
 		logger.debug("updateUserAccount() is executed!");
 		return new ModelAndView("updateAccount", "message", "Account details are updated successfully");

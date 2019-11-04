@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.arijit.model.User;
+import com.arijit.model.UserInfo;
 import com.arijit.services.UserService;
 
 @Controller
@@ -25,7 +25,7 @@ public class RegistrationController {
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("register");
-		mav.addObject("user", new User());
+		mav.addObject("user", new UserInfo());
 		logger.debug("showRegister() is executed!");
 		return mav;
 
@@ -33,7 +33,7 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("user") User user) {
+			@ModelAttribute("user") UserInfo user) {
 		userService.register(user);
 		logger.debug("addUser() is executed!");
 		return new ModelAndView("welcome", "user", user);

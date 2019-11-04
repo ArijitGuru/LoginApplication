@@ -1,12 +1,12 @@
 package com.arijit.services;
 
 import com.arijit.model.Login;
-import com.arijit.model.User;
+import com.arijit.model.UserInfo;
 
 public interface UserService {
-	void register(User user);
+	void register(UserInfo user);
 
-	User validateUser(Login login);
-	boolean updateAccountDetails(User user);
+	UserInfo validateUser(Login login);
+	boolean updateAccountDetails(UserInfo user);
 	
 }
