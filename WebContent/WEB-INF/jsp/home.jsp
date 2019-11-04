@@ -6,6 +6,10 @@
         <title>Welcome</title>
     </head>
     <body>
+    <h2 align="center">Welcome Guest.</h2>
+    
+    <br/>
+    <br/>
         <table align="center">
             <tr>
                 <td><a href="login">Login</a>

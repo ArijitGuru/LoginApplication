@@ -15,7 +15,7 @@
 
 <body>
 
-	<table>
+	<table align="center">
 
 		<tr>
 

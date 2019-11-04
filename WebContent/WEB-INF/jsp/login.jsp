@@ -21,6 +21,13 @@
 		method="post">
 
 		<table align="center">
+			<tr>
+
+				<td></td>
+
+				<td><a href="home">Home</a></td>
+
+			</tr>
 
 			<tr>
 
@@ -53,13 +60,6 @@
 
 			<tr></tr>
 
-			<tr>
-
-				<td></td>
-
-				<td><a href="home">Home</a></td>
-
-			</tr>
 
 		</table>
 
