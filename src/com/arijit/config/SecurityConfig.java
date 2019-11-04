@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().formLogin()
 			.loginPage("/loginProcess").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/welcome")
 			.and()
-			.logout().logoutSuccessUrl("/login?logout")
+			.logout().logoutSuccessUrl("/login?logout").clearAuthentication(true)
 			.and().exceptionHandling().accessDeniedPage("/403")
 			.and()
 			.csrf().disable();
