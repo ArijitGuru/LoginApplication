@@ -37,5 +37,9 @@
 			/WEB-INF/spring-web-servlet.xml
 		</param-value>
 	</context-param> -->
+	
+	<error-page>
+    <location>/errors</location>
+</error-page>
     
 </web-app>

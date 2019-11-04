@@ -30,20 +30,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		auth.userDetailsService(authenticationService);
-		/*
-		 * auth.jdbcAuthentication().dataSource(dataSource)
-		 * .usersByUsernameQuery("select username, password, enabled from user_detail where username=?"
-		 * )
-		 * .authoritiesByUsernameQuery("select username, role from authorities where username=?"
-		 * );
-		 */
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests().antMatchers("/").permitAll()
-			.antMatchers("/welcome", "/home", "/updateAccount" , "/login", "/loginProcess").permitAll()
+			//.antMatchers("/welcome", "/home", "/updateAccount" , "/login", "/loginProcess").permitAll()
 			.antMatchers("/admin").access("hasRole('ROLE_ADMIN')").anyRequest().permitAll()
 			.and().formLogin()
 			.loginPage("/loginProcess").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/welcome")

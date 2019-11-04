@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.arijit.services.UserService;
 
+
+
 @Controller
 public class AdminController {
 private static final Logger logger = Logger.getLogger(AdminController.class);
@@ -20,7 +22,7 @@ private static final Logger logger = Logger.getLogger(AdminController.class);
 	@Autowired
 	public UserService userService;
 
-	@RequestMapping(value = "/admin", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView showAdminPage(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		logger.debug("showAdminPage() is executed!");
 		return new ModelAndView("admin", "message", "This is Admins Page");
