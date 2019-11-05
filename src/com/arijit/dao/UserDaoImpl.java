@@ -35,7 +35,6 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	public UserInfo validateUser(Login login) {
-		String encodedPassword = encoder.encode(login.getPassword());
 		String sql = "select * from user_detail where username='" + login.getUsername() + "' and password='"
 				+ login.getPassword() + "'";
 		logger.debug("UserDaoImpl.validateUser() is being executed..");
@@ -46,7 +45,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public boolean updateUser(UserInfo user) {
-		String sql = "update user_detail set name = ?, username = ?, email = ?, password = ? where user_name = ?";
+		String sql = "update user_detail set name = ?, username = ?, email = ?, password = ? where username = ?";
 		logger.debug("UserDaoImpl.register() is being executed..");
 		int recordCount = jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword(), user.getUsername());
 		logger.debug("Number of records updated..: "+recordCount);
