@@ -31,7 +31,14 @@ public class UserDaoImpl implements UserDao {
 	public void register(UserInfo user) {
 		String sql = "insert into user_detail (name, username, email, password) values(?, ?, ?, ?)";
 		logger.debug("UserDaoImpl.register() is being executed..");
-		jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword());
+		int userDetailTableRowCount = jdbcTemplate.update(sql, user.getName(), user.getUsername(), user.getEmail(), user.getPassword());
+		
+		if (userDetailTableRowCount>0){
+			String sqlAuthority = "insert into authorities (username, role) values(?, ?)";
+			logger.debug("UserDaoImpl.register() is being executed..");
+			jdbcTemplate.update(sqlAuthority, user.getUsername(), "ROLE_USER");
+		}
+		
 	}
 
 	public UserInfo validateUser(Login login) {
