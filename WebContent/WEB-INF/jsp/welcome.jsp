@@ -10,7 +10,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>Welcome</title>
-
+<style>
+a.btn {
+	display: inline-block;
+	text-decoration: none;
+	background-color: aqua;
+	padding: 10px, 5px;
+	margin: 10px;
+	height: 25px;
+	width: 160px;
+	text-align: center;
+	border-radius: 5px;
+}
+</style>
 </head>
 
 <body>
@@ -33,11 +45,11 @@
 
 		<tr>
 
-			<td><a href="welcome">Home</a>
-			<td><a href="updateAccount">Account Update</a></td>
-			<td><a href="tutorials">Tutorials</a></td>
-			<td><a href="admin">Admin</a></td>
-			<td><a href="login?logout">Logout</a></td>
+			<td><a href="welcome" class="btn">Home</a>
+			<td><a href="updateAccount" class="btn">Account Update</a></td>
+			<td><a href="tutorials" class="btn">Tutorials</a></td>
+			<td><a href="admin" class="btn">Admin</a></td>
+			<td><a href="login?logout" class="btn">Logout</a></td>
 
 		</tr>
 		<tr>

@@ -6,6 +6,7 @@ public class UserInfo {
 	private String name;
 	private String email;
 	private String role;
+	private String captcha;
 
 	/**
 	 * @return the username
@@ -69,6 +70,14 @@ public class UserInfo {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getCaptcha() {
+		return captcha;
+	}
+
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
 	}
 
 }

@@ -32,7 +32,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/").permitAll()
+		String[] staticResources  =  {
+		        "/css/**",
+		        "/images/**",
+		        "/fonts/**",
+		        "/scripts/**",
+		        "/resources/**",
+		        "/icon/**"
+		    };
+
+		
+		http.authorizeRequests()
+			.antMatchers("/").permitAll()
+			.antMatchers(staticResources).permitAll()
 			.antMatchers("/home", "/login", "/loginProcess").permitAll()
 			.antMatchers("/welcome", "/updateAccount").authenticated()
 			.antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
