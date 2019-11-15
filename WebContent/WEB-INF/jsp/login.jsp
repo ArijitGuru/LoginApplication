@@ -53,7 +53,7 @@ a.btn {
 				<td align="left"><a href="javascript:;"
 					title="change captcha text"
 					onclick="document.getElementById('captcha_id').src = 'captcha.jpg?' + Math.random();  return false">
-						<img src="<c:url value="/images/icons8-refresh-24.png" />"/>
+						<img width='25px' height='25px' src="<c:url value="/images/refresh.png" /> "/>
 				</a></td>
 
 			</tr>
