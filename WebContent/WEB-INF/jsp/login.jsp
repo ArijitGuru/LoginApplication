@@ -46,13 +46,13 @@ a.btn {
 				<td>Captcha#</td>
 				<td>
 					<div>
-						<img id="captcha_id" name="imgCaptcha" src="captcha.jpg">
+						<img id="captcha_id" name="imgCaptcha" src="${pageContext.request.contextPath }/captcha">
 					</div>
 				</td>
 
 				<td align="left"><a href="javascript:;"
 					title="change captcha text"
-					onclick="document.getElementById('captcha_id').src = 'captcha.jpg?' + Math.random();  return false">
+					onclick="document.getElementById('captcha_id').src = '${pageContext.request.contextPath }/captcha?' + Math.random();  return false">
 						<img width='25px' height='25px' src="<c:url value="/images/refresh.png" /> "/>
 				</a></td>
 

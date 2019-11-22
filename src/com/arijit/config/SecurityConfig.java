@@ -1,5 +1,6 @@
 package com.arijit.config;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/").permitAll()
 			.antMatchers(staticResources).permitAll()
-			.antMatchers("/home", "/login", "/loginProcess").permitAll()
+			.antMatchers("/home", "/login").permitAll()
 			.antMatchers("/welcome", "/updateAccount").authenticated()
 			.antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
 			.and().formLogin()
