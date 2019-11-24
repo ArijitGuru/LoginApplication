@@ -107,8 +107,16 @@ public class LoginController {
 		Enumeration<String> params = request.getParameterNames();
 		System.out.println(captchaText);
 		
-		ModelAndView mav = new ModelAndView("welcome");
-		mav.addObject("welcome");
+		ModelAndView mav = null;
+		
+		if (captchaText.equals(captchaFromUserText)) {
+			mav = new ModelAndView("welcome");
+			mav.addObject("welcome");
+		}else {
+			mav = new ModelAndView("login");
+			mav.addObject("message", "Captcha is wrong!!");
+		}
+		
 		
 		return mav;
 
