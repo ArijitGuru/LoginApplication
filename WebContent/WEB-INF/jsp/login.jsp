@@ -68,7 +68,7 @@ a.btn {
 			<tr>
 				<td></td>
 				<td align="left"><form:button id="login" name="Submit">Submit</form:button></td>
-				<td align="left"><form:button id="reset" name="Reset">Reset</form:button></td>
+				<td align="left"> <input type="reset" value="Reset"></td>
 
 			</tr>
 			<tr></tr>
