@@ -117,9 +117,10 @@ public class LoginController {
 		
 		ModelAndView mav = null;
 		
-		if (captchaText.equals(captchaFromUserText)) {
+		if ((captchaText.equals(captchaFromUserText)) || (boolean)(session.getAttribute("user_authentic")) ) {
 			mav = new ModelAndView("welcome");
 			mav.addObject("welcome");
+			session.setAttribute("user_authentic", true);
 		}else {
 			mav = new ModelAndView("login");
 			mav.addObject("message", "Captcha is wrong!!");
