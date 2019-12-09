@@ -2,6 +2,7 @@ package com.arijit.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,22 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("user") UserInfo user) {
-		userService.register(user);
-		logger.debug("addUser() is executed!");
-		return new ModelAndView("welcome", "user", user);
-
+			@ModelAttribute("user") UserInfo user, HttpSession session) {
+		
+		String captchaFromUserText = (String)session.getAttribute("captcha_security");
+		System.out.println(user.getCaptcha());
+		System.out.println(captchaFromUserText);
+		
+		if (user.getCaptcha() == captchaFromUserText) {
+			userService.register(user);
+			logger.debug("addUser() is executed!");
+			return new ModelAndView("welcome", "user", user);
+		}else {
+			ModelAndView mav = new ModelAndView("register");
+			mav.addObject("user", new UserInfo());
+			logger.debug("showRegister() is executed!");
+			return mav;
+		}
+		
 	}
 }
