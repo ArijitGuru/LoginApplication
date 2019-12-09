@@ -47,6 +47,7 @@ public class RegistrationController {
 		}else {
 			ModelAndView mav = new ModelAndView("register");
 			mav.addObject("user", new UserInfo());
+			mav.addObject("message","Captcha information is wrong");
 			logger.debug("showRegister() is executed!");
 			return mav;
 		}

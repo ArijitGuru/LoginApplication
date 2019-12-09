@@ -21,13 +21,13 @@
 
 			</tr>
 			<tr>
-				<td> <br/> </td>
+				<td><br /></td>
 			</tr>
 			<tr>
-				<td> <br/> </td>
+				<td><br /></td>
 			</tr>
 			<tr>
-				<td> <br/> </td>
+				<td><br /></td>
 			</tr>
 			<tr>
 				<td><form:label path="name">Name</form:label></td>
@@ -49,6 +49,32 @@
 			</tr>
 
 			<tr>
+				<td>Captcha#</td>
+				<td>
+					<div>
+						<img id="captcha_id" name="imgCaptcha"
+							src="${pageContext.request.contextPath }/captcha">
+					</div>
+				</td>
+
+				<td align="left"><a href="javascript:;"
+					title="change captcha text"
+					onclick="document.getElementById('captcha_id').src = '${pageContext.request.contextPath }/captcha?' + Math.random();  return false">
+						<img width='25px' height='25px'
+						src="${pageContext.request.contextPath }/images/refresh.png" />
+				</a></td>
+
+			</tr>
+			<tr>
+				<td colspan="2"><form:errors path="captcha" cssClass="error" /></td>
+			</tr>
+
+			<tr>
+				<td>Enter above Captcha text#</td>
+				<td><form:input path="captcha" /></td>
+			</tr>
+
+			<tr>
 				<td></td>
 				<td><form:button id="update" name="update">Update</form:button>
 				</td>
@@ -61,7 +87,7 @@
 				<td style="font-style: italic; color: red;">${message}</td>
 
 			</tr>
-			
+
 
 		</table>
 	</form:form>

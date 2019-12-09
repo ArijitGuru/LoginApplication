@@ -2,6 +2,7 @@ package com.arijit.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,22 @@ public class UpdateAccountController {
 
 	@RequestMapping(value = "/updateAccountProcess", method = RequestMethod.POST)
 	public ModelAndView updateUserAccount(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("user") UserInfo user) {
-		userService.updateAccountDetails(user);
-		logger.debug("updateUserAccount() is executed!");
-		return new ModelAndView("updateAccount", "message", "Account details are updated successfully");
+			@ModelAttribute("user") UserInfo user, HttpSession session) {
+		
+		String captchaFromUserText = (String)session.getAttribute("captcha_security");
+		
+		if (user.getCaptcha() == captchaFromUserText){
+			userService.updateAccountDetails(user);
+			logger.debug("updateUserAccount() is executed!");
+			return new ModelAndView("updateAccount", "message", "Account details are updated successfully");
+		}else {
+			ModelAndView mav = new ModelAndView("updateAccount");
+			mav.addObject("user", new UserInfo());
+			mav.addObject("message", "Captcha information is wrong");
+			logger.debug("showUpdateAccount() is executed!");
+			return mav;
+		}
+		
 
 	}
 }

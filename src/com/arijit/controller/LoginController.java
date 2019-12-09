@@ -117,7 +117,6 @@ public class LoginController {
 			mav.addObject("message", "Captcha is wrong!!");
 		}
 		
-		
 		return mav;
 
 	}
