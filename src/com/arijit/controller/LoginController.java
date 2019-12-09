@@ -106,6 +106,14 @@ public class LoginController {
 		String captchaFromUserText = (String)session.getAttribute("captchaFromUser");
 		Enumeration<String> params = request.getParameterNames();
 		System.out.println(captchaText);
+		Principal principal = request.getUserPrincipal();
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		boolean hasUserRoleAdmin = authentication.getAuthorities().stream()
+		          .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
+		
+		session.setAttribute("user_admin", hasUserRoleAdmin);
 		
 		ModelAndView mav = null;
 		

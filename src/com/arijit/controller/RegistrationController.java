@@ -40,7 +40,7 @@ public class RegistrationController {
 		System.out.println(user.getCaptcha());
 		System.out.println(captchaFromUserText);
 		
-		if (user.getCaptcha() == captchaFromUserText) {
+		if (user.getCaptcha().equals(captchaFromUserText)) {
 			userService.register(user);
 			logger.debug("addUser() is executed!");
 			return new ModelAndView("welcome", "user", user);

@@ -37,8 +37,10 @@ public class UpdateAccountController {
 			@ModelAttribute("user") UserInfo user, HttpSession session) {
 		
 		String captchaFromUserText = (String)session.getAttribute("captcha_security");
+		System.out.println(user.getCaptcha());
+		System.out.println(captchaFromUserText);
 		
-		if (user.getCaptcha() == captchaFromUserText){
+		if (user.getCaptcha().equals(captchaFromUserText)){
 			userService.updateAccountDetails(user);
 			logger.debug("updateUserAccount() is executed!");
 			return new ModelAndView("updateAccount", "message", "Account details are updated successfully");
